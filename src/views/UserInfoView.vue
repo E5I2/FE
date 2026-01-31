@@ -69,7 +69,7 @@ const handleSubmit = () => {
 }
 
 .button-container {
-  padding: 16px 0 100px 0;
+  padding: 16px 0 40px 0;
   margin-top: auto;
 }
 </style>
