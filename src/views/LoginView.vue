@@ -6,11 +6,6 @@ const router = useRouter();
 
 const handleGoogleLogin = async () => {
     try {
-        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-        await sleep(500);
-        router.push('/main');
-        return;
         const idToken = import.meta.env.VITE_GOOGLE_ID_TOKEN;
         if (!idToken) {
             console.error('Missing VITE_GOOGLE_ID_TOKEN');
@@ -35,7 +30,7 @@ const handleGoogleLogin = async () => {
             console.log('Login successful', data);
             
             // Route based on registration status
-            if (data.isRegister === true) {
+            if (data.isRegister === false) {
                 router.push('/signup');
             } else {
                 router.push('/main');
