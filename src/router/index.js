@@ -4,6 +4,8 @@ import LoginView from '../views/LoginView.vue'
 import UserInfoView from '../views/UserInfoView.vue'
 import GenderSelectionView from '../views/GenderSelectionView.vue'
 import PhysicalInfoView from '../views/PhysicalInfoView.vue'
+import RunningInfoView from '../views/RunningInfoView.vue'
+import RunningResultView from '../views/RunningResultView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,6 +48,16 @@ const router = createRouter({
       path: '/welcome',
       name: 'welcome',
       component: () => import('../views/WelcomeView.vue')
+    },
+    {
+      path: '/running-info',
+      name: 'running-info',
+      component: RunningInfoView
+    },
+    {
+      path: '/running-result',
+      name: 'running-result',
+      component: RunningResultView
     }
   ]
 })
