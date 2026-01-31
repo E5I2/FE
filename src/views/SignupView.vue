@@ -31,7 +31,7 @@ const signupStore = useSignupStore();
 // Initialize email from query params
 const email = route.query.email;
 if (email) {
-  signupStore.setEmail(email);
+  signupStore.setEmail(email+"@gmail.com");
 }
 
 const handleStart = () => {
