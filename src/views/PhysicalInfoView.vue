@@ -4,6 +4,9 @@
       <!-- Header -->
       <div class="header">
         <h1 class="title">사용자 정보</h1>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 100%"></div>
+        </div>
       </div>
 
       <!-- Question Section -->
@@ -95,10 +98,22 @@ const handleSubmit = () => {
   font-size: 18px;
   font-weight: 600;
   color: #000;
-  padding-bottom: 12px;
-  border-bottom: 3px solid #4ade80;
-  display: inline-block;
-  min-width: 200px;
+  padding-bottom: 20px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background-color: #ECECEC;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #00FF5E; /* Bright Green */
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
 
 /* Question Section */
@@ -183,7 +198,7 @@ const handleSubmit = () => {
 
 /* Button Container */
 .button-container {
-  padding: 16px 0 100px 0;
+  padding: 16px 0 40px 0;
   margin-top: auto;
 }
 </style>

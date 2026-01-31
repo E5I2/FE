@@ -4,28 +4,23 @@
       <!-- Header -->
       <div class="header">
         <h1 class="title">사용자 정보</h1>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 33%"></div>
+        </div>
       </div>
 
       <!-- Form -->
       <div class="form">
         <div class="form-group">
-          <label for="name">이름</label>
+          <div class="label-container">
+            <label for="name">이름</label>
+            <span class="helper-text">한글 5자 / 영문 7자 이하</span>
+          </div>
           <input 
             id="name"
             v-model="formData.name" 
             type="text" 
-            placeholder="이름을 입력해주세요"
-            class="form-input"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="phone">전화번호</label>
-          <input 
-            id="phone"
-            v-model="formData.phone" 
-            type="tel" 
-            placeholder=""
+            placeholder="런피카소"
             class="form-input"
           />
         </div>
@@ -33,7 +28,7 @@
 
       <!-- Submit Button -->
       <div class="button-container">
-        <BaseButton variant="secondary" @click="handleSubmit">다음</BaseButton>
+        <BaseButton variant="primary" @click="handleSubmit">다음</BaseButton>
       </div>
     </div>
   </div>
@@ -44,8 +39,7 @@ import { ref } from 'vue'
 import BaseButton from '../components/BaseButton.vue'
 
 const formData = ref({
-  name: '',
-  phone: ''
+  name: ''
 })
 
 const handleSubmit = () => {
@@ -83,10 +77,22 @@ const handleSubmit = () => {
   font-size: 18px;
   font-weight: 600;
   color: #000;
-  padding-bottom: 12px;
-  border-bottom: 3px solid #4ade80;
-  display: inline-block;
-  min-width: 200px;
+  padding-bottom: 20px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 4px; /* Thin line like in image */
+  background-color: #ECECEC; /* Light grey background */
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #00FF5E; /* Bright Green */
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
 
 /* Form */
@@ -98,12 +104,23 @@ const handleSubmit = () => {
   margin-bottom: 24px;
 }
 
+.label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
 .form-group label {
   display: block;
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+
+.helper-text {
+  font-size: 13px;
+  color: #999;
 }
 
 .form-input {
@@ -128,7 +145,7 @@ const handleSubmit = () => {
 
 /* Button Container */
 .button-container {
-  padding: 16px 0 100px 0;
+  padding: 16px 0 40px 0;
   margin-top: auto;
 }
 </style>

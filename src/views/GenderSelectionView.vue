@@ -4,6 +4,9 @@
       <!-- Header -->
       <div class="header">
         <h1 class="title">사용자 정보</h1>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 66%"></div>
+        </div>
       </div>
 
       <!-- Question Section -->
@@ -63,10 +66,22 @@ const selectGender = (gender) => {
   font-size: 18px;
   font-weight: 600;
   color: #000;
-  padding-bottom: 12px;
-  border-bottom: 3px solid #4ade80;
-  display: inline-block;
-  min-width: 200px;
+  padding-bottom: 20px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background-color: #ECECEC;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #00FF5E; /* Bright Green */
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
 
 /* Question Section */
@@ -93,6 +108,6 @@ const selectGender = (gender) => {
   flex-direction: column;
   gap: 12px;
   margin-top: auto;
-  padding-bottom: 100px;
+  padding-bottom: 40px;
 }
 </style>
