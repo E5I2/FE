@@ -41,6 +41,11 @@ const router = createRouter({
             path: '/physical',
             name: 'physical',
             component: PhysicalInfoView
+        },
+        {
+            path: '/welcome',
+            name: 'welcome',
+            component: () => import('../views/WelcomeView.vue')
         }
     ]
 })
