@@ -56,6 +56,11 @@ const router = createRouter({
             path: '/running-info',
             name: 'running-info',
             component: () => import('../views/RunningInfoView.vue')
+        },
+        {
+            path: '/running-result',
+            name: 'running-result',
+            component: () => import('../views/RunningResultView.vue')
         }
     ]
 })
