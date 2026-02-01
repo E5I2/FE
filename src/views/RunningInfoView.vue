@@ -93,9 +93,8 @@ const formattedTimer = computed(() => {
 });
 
 const stopRunning = () => {
-  store.stopRun();
-  store.resetLocationFixed();
-  router.push('/main');
+  // Navigate to result page instead of stopping immediately
+  router.push('/running-result');
 };
 
 onMounted(() => {
